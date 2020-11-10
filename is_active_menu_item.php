@@ -1,3 +1,4 @@
+<?php
 function is_active_menu_item($url) {
 	$ID = get_the_ID();
 	$url_ID = url_to_postid($url);
