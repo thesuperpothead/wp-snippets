@@ -1,4 +1,4 @@
-
+<?php
 /*
 * Adding new template within plugin folder
 */
