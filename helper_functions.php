@@ -1,3 +1,4 @@
+<?php
 /*
 * Render Image HTML Tag by ID if image not attached to post
 */
