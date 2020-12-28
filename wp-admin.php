@@ -7,7 +7,7 @@ add_action('admin_enqueue_scripts', function() {
 });
 add_filter("manage_edit-pa_colour_columns", function ($columns) {
     $num = 1;
-    $new_columns = Array( 'color_img' => 'Color' );
+    $new_columns = ['color_img' => 'Color'];
     return array_slice( $columns, 0, $num ) + $new_columns + array_slice( $columns, $num );
 });
 add_filter("manage_pa_colour_custom_column", function ( $string, $column_name, $term_id ) {
