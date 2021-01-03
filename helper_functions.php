@@ -36,3 +36,17 @@ function get_video_poster($post_obj) {
 	}
 	return get_template_directory_uri().'/assets/images/tcy_vdo.png';
 }
+
+/*
+ * Send message to my telegram
+ */
+function send_message_to_telegram($text) {
+	$token = "1038159654:AAEjdpyA3RqLznzt8wbwauKS0ha0ccM2i-E";
+	$chat_id = "-398790792";
+	$data = [
+		'text' => $text,
+		'chat_id' => $chat_id
+	];
+	$sendToTelegram = file_get_contents("https://api.telegram.org/bot$token/sendMessage?" . http_build_query($data) );
+	//$sendToTelegram = file_get_contents("https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&parse_mode=html&text={$text}","r");
+}
