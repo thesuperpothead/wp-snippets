@@ -1,4 +1,5 @@
 <?php
+// add editor-style.css to WYSIWYG Editor
 add_editor_style();
 
 function gaist_mce4_options($init) {
