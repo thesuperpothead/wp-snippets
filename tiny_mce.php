@@ -1,4 +1,5 @@
 <?php
+add_editor_style();
 
 function gaist_mce4_options($init) {
     $default_colours = '
@@ -51,3 +52,24 @@ function gaist_mce4_options($init) {
     return $init;
 }
 add_filter('tiny_mce_before_init', 'gaist_mce4_options');
+
+/*
+* Add Formats to TinyMCE
+*/
+add_filter( 'mce_buttons_2', 'extend_mce_buttons_2' );
+function extend_mce_buttons_2( $buttons ) {
+    array_unshift( $buttons, 'styleselect' );
+    return $buttons;
+}
+add_filter( 'tiny_mce_before_init', 'extend_mce_before_init_insert_formats' );
+function extend_mce_before_init_insert_formats( $init_array ) {
+    $style_formats =[  
+        [
+            'title' => 'btn-bordered',
+            'selector' => 'a',
+            'classes' => 'btn btn-join'
+        ],
+    ];
+    $init_array['style_formats'] = wp_json_encode( $style_formats );
+    return $init_array;
+}
