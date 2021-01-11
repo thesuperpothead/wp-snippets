@@ -2,7 +2,7 @@
 // add editor-style.css to WYSIWYG Editor
 add_editor_style();
 
-function gaist_mce4_options($init) {
+function vine_mce4_options($init) {
     $default_colours = '
         "000000", "Black",
         "993300", "Burnt orange",
