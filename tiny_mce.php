@@ -52,7 +52,7 @@ function vine_mce4_options($init) {
 
     return $init;
 }
-add_filter('tiny_mce_before_init', 'gaist_mce4_options');
+add_filter('tiny_mce_before_init', 'vine_mce4_options');
 
 /*
 * Add Formats to TinyMCE
