@@ -64,13 +64,53 @@ function extend_mce_buttons_2( $buttons ) {
 }
 add_filter( 'tiny_mce_before_init', 'extend_mce_before_init_insert_formats' );
 function extend_mce_before_init_insert_formats( $init_array ) {
-    $style_formats =[  
-        [
-            'title' => 'btn-bordered',
-            'selector' => 'a',
-            'classes' => 'btn btn-join'
-        ],
-    ];
-    $init_array['style_formats'] = wp_json_encode( $style_formats );
+    $style_formats = array(
+        array(
+            'title' => 'Button Primary',
+            'items' => [
+                [
+                    'title' => 'Simple',
+                    'selector' => 'a',
+                    'classes' => 'btn btn-primary'
+                ],
+                [
+                    'title' => 'Right Arrowed',
+                    'selector' => 'a',
+                    'classes' => 'btn btn-primary btn-ti-angle-right'
+                ],
+                [
+                    'title' => 'Download Icon',
+                    'selector' => 'a',
+                    'classes' => 'btn btn-primary btn-ti-download'
+                ],
+            ]
+            
+        ),
+        array(
+            'title' => 'Button Alt',
+            'items' => [
+                [
+                    'title' => 'Simple',
+                    'selector' => 'a',
+                    'classes' => 'btn btn-view'
+                ],
+                [
+                    'title' => 'Right Arrowed',
+                    'selector' => 'a',
+                    'classes' => 'btn btn-view btn-ti-angle-right'
+                ],
+                [
+                    'title' => 'Download Icon',
+                    'selector' => 'a',
+                    'classes' => 'btn btn-view btn-ti-download'
+                ],
+            ]
+            
+        )
+    );
+
+    $init_array['style_formats'] = json_encode( $style_formats );
+
     return $init_array;
+
 }
