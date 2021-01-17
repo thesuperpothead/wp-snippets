@@ -2,6 +2,7 @@
 
 // Error Log
 file_put_contents(__DIR__.'/log', print_r($var, true) . "\n", FILE_APPEND);
+file_put_contents(get_template_directory().'/log', print_r($var, true) . "\n", FILE_APPEND);
 
 /*
 * Render Image HTML Tag by ID if image not attached to post
